@@ -11,15 +11,13 @@
     </div>
 
     <div>
-        <p>опубликовано: 17.06.2020, 1:43</p>
-        <h2><a href="">Мой первый пост</a></h2>
-        <p>Тут много умного текста</p>
-    </div>
-
-    <div>
-        <p>опубликовано: 07.09.2020, 22:32</p>
-        <h2><a href="">Мой второй пост</a></h2>
-        <p>Тут ещё больше умного текста</p>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}<a/></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
     </div>
 </body>
 </html>
